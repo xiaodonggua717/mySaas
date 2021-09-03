@@ -67,13 +67,21 @@ import router from '@/router'
 import store from '@/store'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
+
 const whiteList = ['/login', '/404']
-router.beforeEach((to, form, next) => {
+router.beforeEach(async(to, form, next) => {
+  // 进度条
   nprogress.start()
+  // 此处的逻辑为 判断是否有token
+  // 如果有token则进行判断是否跳转到登录页面 如果是则令其跳转到主页 如果不是则放行通过
+  // 如果没有token则进行判断是否跳转的页面是白名单页面 如果是则放行通过 如果不是则令其跳转至登录页面
   if (store.getters.token) {
     if (to.path === '/login') {
       next('/')
     } else {
+      if (!store.getters.userId) {
+        await store.dispatch('user/getUserInfo') // 这里如果后面需要根据用户资料做出页面处理的话 必须等待这里完成才行 而这里是异步操作 所以使用await
+      }
       next()
     }
   } else {

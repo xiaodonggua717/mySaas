@@ -96,9 +96,10 @@
 // }
 
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import { login } from '@/api/user'
+import { login, getUserInfo, getUserDetailById } from '@/api/user'
 const state = {
-  token: getToken() // 设置token为共享状态
+  token: getToken(), // 设置token为共享状态
+  userInfo: {} // 不设置成null而是空对象的原因是 在getters会引用userInfo的值 如果是null会引起异常和报错
 }
 const mutations = {
   setToken(state, token) {
@@ -108,12 +109,29 @@ const mutations = {
   removeToken(state) {
     state.token = null
     removeToken()
+  },
+  setUserInfo(state, result) {
+    state.userInfo = result // 响应式 将用户资料信息存到state里
+  },
+  removeUserInfor(state) {
+    state.userInfo = {}
   }
 }
 const actions = {
   async login(context, data) {
     const result = await login(data)
     context.commit('setToken', result)
+  },
+  async getUserInfo(context) {
+    const result = await getUserInfo() // 获取用户资料
+    const baseInfo = await getUserDetailById(result.userId)
+    const baseResult = { ...result, ...baseInfo } // 将详情信息和基础信息合并
+    context.commit('setUserInfo', baseResult) // 提交用户资料到mutation
+    return baseResult // 这里是用作权限处理返回 result
+  },
+  logout(context) {
+    context.commit('removeToken')
+    context.commit('removeUserInfor')
   }
 }
 export default {
