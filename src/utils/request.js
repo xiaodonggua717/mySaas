@@ -87,6 +87,9 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '@/store'
+import { getTimeStamp } from './auth'
+import router from '@/router'
+const Timeout = 3600 // 超时时间
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
@@ -95,6 +98,11 @@ const service = axios.create({
 service.interceptors.request.use(config => {
   if (store.getters.token) {
     // 注入用户状态
+    if (isCheckTimeout()) {
+      store.dispatch('user/logout')
+      router.push('/login')
+      return Promise.reject(new Error('登录信息超时'))
+    }
     config.headers['Authorization'] = `Bearer ${store.getters.token}`
   }
   return config
@@ -111,7 +119,18 @@ service.interceptors.response.use(response => {
     return Promise.reject(new Error(message))
   }
 }, error => {
-  Message.error(error.message)
-  return Promise.reject(error)
+  if (error.response.data.code === 10002) {
+    // 说明此时token超时
+    store.dispatch('user/logout')
+    router.push('/login')
+  } else {
+    Message.error(error.message)
+  } return Promise.reject(error)
 })
+// 超时逻辑即当前时间-缓存时间戳是否大于Timeout
+function isCheckTimeout() {
+  var currentTime = Date.now()
+  var timeStamp = getTimeStamp()
+  return (currentTime - timeStamp) / 1000 > Timeout
+}
 export default service

@@ -95,7 +95,7 @@
 //   actions
 // }
 
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, removeToken, setTimeStamp } from '@/utils/auth'
 import { login, getUserInfo, getUserDetailById } from '@/api/user'
 const state = {
   token: getToken(), // 设置token为共享状态
@@ -121,6 +121,7 @@ const actions = {
   async login(context, data) {
     const result = await login(data)
     context.commit('setToken', result)
+    setTimeStamp()
   },
   async getUserInfo(context) {
     const result = await getUserInfo() // 获取用户资料
