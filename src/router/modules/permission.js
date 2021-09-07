@@ -8,7 +8,8 @@ export default {
     path: '', // 二级路由不写 目的是让二级路由的组件也直接显示出来
     component: () => import('@/views/permission'),
     meta: {
-      title: '权限管理'
+      title: '权限管理',
+      icon: 'lock '
     }
   }]
 }

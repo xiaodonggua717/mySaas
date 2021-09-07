@@ -8,7 +8,8 @@ export default {
     path: '', // 二级路由不写 目的是让二级路由的组件也直接显示出来
     component: () => import('@/views/social'),
     meta: {
-      title: '社保'
+      title: '社 保',
+      icon: 'table'
     }
   }]
 }
