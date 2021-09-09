@@ -22,3 +22,7 @@ export function validMobile(str) {
 export function validPassword(str) {
   return str.length >= 6 && str.length <= 16
 }
+
+export function validDeptsIntroduction(str) {
+  return str.length >= 1 && str.length <= 300
+}
