@@ -49,14 +49,30 @@ export default {
     const validateDeptsName = async(rule, value, callback) => {
       // 返回值中depts为数组名 此时可以直接使用解构赋值
       const { depts } = await getDepartments()
-      const isRepeat = depts.filter(item => item.pid === this.treeNode.id).some(item => item.name === value)
-      // 去找子级中是否有与新的子部门相同名称的
+      let isRepeat = false
+      // 逻辑在于 新增时我们新增的是该部门的子部门 所以要在pid=this.treeNode.id的部门中遍历是否存在相同字段
+      // 而编辑时我们编辑的是该部门,所以涉及的是同级的部门 要在pid=this.treeNode.pid的部门中遍历
+      if (this.formData.id) {
+        // 有id就是编辑模式
+        // 逻辑是同级部门下名字不能和其他部门的名字进行重复 就是把自己在遍历中排除掉
+        isRepeat = depts.filter(item => item.id !== this.formData.id && item.pid === this.treeNode.pid).some(item => item.name === value)
+      } else {
+        // 没有id就是新增模式
+        isRepeat = depts.filter(item => item.pid === this.treeNode.id).some(item => item.name === value)
+        // 去找子级中是否有与新的子部门相同名称的
+      }
       isRepeat ? callback(new Error(`同级部门下已经存在"${value}"部门了`)) : callback()
     }
     const validateDeptsCode = async(rule, value, callback) => {
       const { depts } = await getDepartments()
-      //   有时api传来的值可能会出现code为空的情况 所以加一个强制条件
-      const isRepeat = depts.some(item => item.code === value && value)
+      let isRepeat = false
+      if (this.formData.id) {
+        // 逻辑同对部门名的判断
+        isRepeat = depts.some(item => item.id !== this.formData.id && item.code === value && value)
+      } else {
+        //   有时api传来的值可能会出现code为空的情况 所以加一个强制条件
+        isRepeat = depts.some(item => item.code === value && value)
+      }
       isRepeat ? callback(new Error(`同级部门下已经存在"${value}"编码的部门了`)) : callback()
     }
     const validateDeptsIntroduction = (rule, value, callback) => {
