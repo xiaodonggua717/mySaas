@@ -10,7 +10,6 @@ import salarysRouter from './modules/salarys'
 import settingRouter from './modules/setting'
 import socialRouter from './modules/social'
 Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
 
@@ -60,6 +59,15 @@ export const constantRoutes = [
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
       meta: { title: '主          页', icon: 'dashboard' }
+    }]
+  },
+  {
+    path: '/import',
+    component: Layout,
+    hidden: true, // 隐藏在左侧菜单中
+    children: [{
+      path: '', // 二级路由path什么都不写 表示二级默认路由
+      component: () => import('@/views/import')
     }]
   },
 

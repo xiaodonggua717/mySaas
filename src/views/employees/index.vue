@@ -3,10 +3,10 @@
     <div class="app-container">
       <page-tools :show-before="true">
         <!-- 左侧为总记录数 -->
-        <span slot="before">共17条记录</span>
+        <span slot="before">共{{ page.total }}条记录</span>
         <!-- 右侧为按钮: excel导出 导入 新增员工 -->
         <template v-slot:after>
-          <el-button type="success">excel导入</el-button>
+          <el-button type="success" @click="$router.push('/import')">excel导入</el-button>
           <el-button type="danger">excel导出</el-button>
           <el-button type="primary" @click="showDialog = true">新增员工</el-button>
         </template>
