@@ -1,6 +1,10 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">用户名: {{ username }}</div>
+    <page-tools :show-before="true">
+      <span slot="before">哈哈哈</span>
+      <el-button slot="after" type="primary">导入excel</el-button>
+    </page-tools>
   </div>
 </template>
 
@@ -9,6 +13,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Dashboard',
+
   computed: {
     ...mapGetters([
       'username'
