@@ -74,8 +74,8 @@ export const asyncRouter = [
   permissionRouter,
   attendancesRouter,
   salarysRouter,
-  settingRouter,
-  socialRouter
+  socialRouter,
+  settingRouter
 ]
 const createRouter = () => new Router({
   // mode: 'history', // require service support
