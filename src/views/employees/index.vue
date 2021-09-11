@@ -8,7 +8,7 @@
         <template v-slot:after>
           <el-button type="success">excel导入</el-button>
           <el-button type="danger">excel导出</el-button>
-          <el-button type="primary ">新增员工</el-button>
+          <el-button type="primary" @click="showDialog = true">新增员工</el-button>
         </template>
       </page-tools>
       <!-- 放置表格和分页 -->
@@ -50,13 +50,18 @@
         </el-row>
       </el-card>
     </div>
+    <add-employee :show-dialog.sync="showDialog" />
   </div>
 </template>
 
 <script>
 import EmployeeEnum from '@/api/constant/employees'
+import AddEmployee from './components/add-employee.vue'
 import { getEmployeeList, delEmployee } from '@/api/employees'
 export default {
+  components: {
+    AddEmployee
+  },
   data() {
     return {
       list: [], // 接受数组
@@ -66,7 +71,8 @@ export default {
         size: 10,
         total: 0
       },
-      loading: false
+      loading: false,
+      showDialog: false
     }
   },
   created() {
