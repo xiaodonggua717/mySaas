@@ -7,7 +7,7 @@
         <!-- 右侧为按钮: excel导出 导入 新增员工 -->
         <template v-slot:after>
           <el-button type="success" @click="$router.push('/import')">excel导入</el-button>
-          <el-button type="danger">excel导出</el-button>
+          <el-button type="danger" @click="exportData">excel导出</el-button>
           <el-button type="primary" @click="showDialog = true">新增员工</el-button>
         </template>
       </page-tools>
@@ -103,6 +103,18 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+    exportData() {
+      // 导出excel
+      import('@/vendor/Export2Excel').then(excel => {
+        excel.export_json_to_excel({
+          header: ['姓名', '工资'], // 表头 必填
+          data: [['张三', 3000]], // 具体数据 必填
+          filename: '员工工资表', // 非必填
+          autoWidth: true, // 非必填
+          bookType: 'xlsx' // 非必填
+        })
+      })
     }
   }
 }
