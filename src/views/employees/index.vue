@@ -84,7 +84,7 @@
               <el-button type="text" size="small">转正</el-button>
               <el-button type="text" size="small">调岗</el-button>
               <el-button type="text" size="small">离职</el-button>
-              <el-button type="text" size="small">角色</el-button>
+              <el-button type="text" size="small" @click="editRole(row.id)">角色</el-button>
               <el-button
                 type="text"
                 size="small"
@@ -111,6 +111,8 @@
       </el-card>
     </div>
     <add-employee :show-dialog.sync="showDialog" />
+    <!-- 放置分配角色组件 -->
+    <assign-role ref="assignRole" :show-role-dialog.sync="showRoleDialog" :user-id="userId" />
   </div>
 </template>
 
@@ -119,9 +121,10 @@ import EmployeeEnum from '@/api/constant/employees'
 import AddEmployee from './components/add-employee.vue'
 import { getEmployeeList, delEmployee } from '@/api/employees'
 import { formatDate } from '@/filters'
+import AssignRole from './components/assign-role.vue'
 export default {
   components: {
-    AddEmployee
+    AddEmployee, AssignRole
   },
   data() {
     return {
@@ -133,7 +136,9 @@ export default {
         total: 0
       },
       loading: false,
-      showDialog: false
+      showDialog: false,
+      showRoleDialog: false,
+      userId: null
     }
   },
   created() {
@@ -203,6 +208,11 @@ export default {
           return item[headers[key]]
         }) // => ["张三", "13811"，"2018","1", "2018", "10002"]
       })
+    },
+    async  editRole(id) {
+      this.userId = id // props传值 是异步的
+      await this.$refs.assignRole.getUserDetailById(id) // 父组件调用子组件方法
+      this.showRoleDialog = true
     }
   }
 }
