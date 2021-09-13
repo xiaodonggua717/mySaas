@@ -69,11 +69,10 @@ export const constantRoutes = [
       path: '', // 二级路由path什么都不写 表示二级默认路由
       component: () => import('@/views/import')
     }]
-  },
+  }
 
   // 404 page must be placed at the end !!!
   // 当匹配不到时进入path * 进入404页面
-  { path: '*', redirect: '/404', hidden: true }
 ]
 export const asyncRouter = [
   approvalsRouter,
@@ -93,7 +92,6 @@ const createRouter = () => new Router({
 
 const router = createRouter()
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
