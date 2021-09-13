@@ -1,5 +1,5 @@
 import Layout from '@/layout'
-// 员工的路由规则
+// 出勤的路由规则
 export default {
   path: '/attendances', // 路由地址
   name: 'attendances', // 一级路由的name

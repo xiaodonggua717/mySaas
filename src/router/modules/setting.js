@@ -1,8 +1,8 @@
 import Layout from '@/layout'
-// 员工的路由规则
+// 设置的路由规则
 export default {
   path: '/setting', // 路由地址
-  name: 'setting', // 一级路由的name
+  name: 'settings', // 一级路由的name
   component: Layout,
   children: [{
     path: '', // 二级路由不写 目的是让二级路由的组件也直接显示出来

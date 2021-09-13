@@ -1,5 +1,5 @@
 import Layout from '@/layout'
-// 员工的路由规则
+// 审批的路由规则
 export default {
   path: '/approvals', // 路由地址
   name: 'approvals', // 一级路由的name

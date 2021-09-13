@@ -1,5 +1,5 @@
 import Layout from '@/layout'
-// 员工的路由规则
+// 工资的路由规则
 export default {
   path: '/salarys', // 路由地址
   name: 'salarys', // 一级路由的name
