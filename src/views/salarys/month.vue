@@ -55,7 +55,6 @@
 import {
   getArchivingCont,
   newReport
-  // getArchivingArchive
 } from '@/api/salarys'
 export default {
   name: 'HistoricalArchiving',

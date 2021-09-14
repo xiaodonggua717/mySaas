@@ -50,6 +50,7 @@ export function initSalary(data) {
     data
   })
 }
+
 export function getArchivingList(params) {
   return request({
     url: `/salarys/reports/${params.year}`,

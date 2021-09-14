@@ -1,6 +1,5 @@
 
 import Layout from '@/layout'
-
 export default {
   path: '/users',
   component: Layout,

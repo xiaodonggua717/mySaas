@@ -59,6 +59,7 @@ export default {
         title: '加班申请',
         icon: 'approval', noCache: true }
     },
+
     {
       path: 'securitySetting',
       component: () => import('@/views/approvals/security'),

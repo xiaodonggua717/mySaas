@@ -13,7 +13,7 @@
         <el-input v-model="formLabelAlign.currentPostWage" placeholder="当前岗位工资" style="width: 60%" type="number" />
       </el-form-item>
       <el-form-item label="当前工资合计">
-        <el-input v-model="computeCurrentTotal" placeholder="当前工资合计, 自动计算" style="width: 60%" :disabled="true" />
+        <el-input v-model="computeCurrentTotal" placeholder="当前工资合计,自动计算" style="width: 60%" :disabled="true" />
       </el-form-item>
       <el-form-item label="转正基本工资">
         <el-input
@@ -27,7 +27,7 @@
         <el-input v-model="formLabelAlign.turnToPostWages" placeholder="转正岗位工资" style="width: 60%" type="number" />
       </el-form-item>
       <el-form-item label="转正工资合计">
-        <el-input v-model="computeTurnTotal" placeholder="当前基本工资, 自动计算" style="width: 60%" :disabled="true" />
+        <el-input v-model="computeTurnTotal" placeholder="当前基本工资,自动计算" style="width: 60%" :disabled="true" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">确认</el-button>
@@ -42,9 +42,13 @@ import { initSalary } from '@/api/salarys'
 
 export default {
   name: 'UsersTableIndex',
-  props: [
-    'userId'
-  ],
+  props: {
+    // 'userId'
+    userId: {
+      type: Object, // 类型
+      default: null // 默认值
+    }
+  },
   data() {
     return {
       labelPosition: 'left',

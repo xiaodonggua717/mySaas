@@ -18,7 +18,7 @@
           />
         </el-select>
       </el-form-item>
-      <!--离职表单-->
+      <!--离职的表单-->
       <div v-if="state==3">
         <el-form-item label="期望离职时间" :class="computeOpType?'item-enable':'item-dismiss'" prop="exceptTime">
           <el-date-picker

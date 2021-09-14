@@ -24,6 +24,7 @@
           <el-time-picker v-model="ruleForm.time1" type="fixed-time" placeholder="选择时间" style="width: 100%;" />
         </el-col>
       </el-form-item>
+
       <el-form-item label="补偿方式">
         <span>调休</span>
       </el-form-item>

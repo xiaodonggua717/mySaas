@@ -25,7 +25,6 @@
         label-width="120px"
         class="demo-ruleForm"
       >
-
         <el-form-item label="期望离职时间：" prop="expectedDepartureTime">
           <el-date-picker
             v-model="ruleForm.data.exceptTime"

@@ -87,7 +87,8 @@ export const asyncRouter = [
   settingRouter
 ]
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // require service support
+  base: 'mySaas/',
   scrollBehavior: () => ({ y: 0 }),
   routes: [...constantRoutes]
 })

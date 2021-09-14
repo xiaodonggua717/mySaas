@@ -103,7 +103,6 @@ export default {
 
     }
   },
-
   data() {
     return {
       dialogImageUrl: '',

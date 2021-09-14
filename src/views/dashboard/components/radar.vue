@@ -50,12 +50,12 @@ export default {
         // areaStyle: {normal: {}},
         data: [
           {
-            value: [10, 1, 100, 5, 100, 0],
-            name: '张三'
+            value: [100, 100, 100, 75, 100, 75],
+            name: '憨憨一号'
           },
           {
             value: [50, 50, 50, 50, 50, 10],
-            name: '李四'
+            name: '憨憨二号'
           }
         ]
       }]

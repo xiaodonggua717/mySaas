@@ -13,7 +13,7 @@
         <div class="itemTopLab" :class="{act: itemes.act}">
           <div class="lab" @click="openTable(itemes,index)"> > </div>
           <div>
-            <p class="title">{{ itemes.month }}社保报表 <span>{{ itemes.creationTime }}</span></p>
+            <p class="title">{{ itemes.month }}社保报表<span>{{ itemes.creationTime }}</span></p>
             <p class="labTit" @click="openTable(itemes,index)">社保报表</p>
           </div>
           <div>

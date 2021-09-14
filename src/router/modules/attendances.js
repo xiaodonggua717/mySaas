@@ -1,6 +1,4 @@
-
 import Layout from '@/layout'
-
 const attendRouter = {
   path: '/attendances',
   component: Layout,

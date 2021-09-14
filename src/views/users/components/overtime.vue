@@ -25,6 +25,7 @@
         label-width="120px"
         class="demo-ruleForm"
       >
+
         <el-form-item label="补偿方式" prop="types">
           调休
         </el-form-item>

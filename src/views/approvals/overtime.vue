@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="content">
-        <!-- <p v-for="(item, index) in information.body" :key="index"><span>{{item.key}} </span> {{item.val}}</p> -->
+
         <p>
           <span>补偿方式：</span>
           调休

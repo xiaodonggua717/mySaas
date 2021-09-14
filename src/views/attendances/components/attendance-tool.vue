@@ -31,7 +31,7 @@
 </template>
 
 <script>
-// import { notify } from '@/api/attendances'
+
 import employeesSet from './set'
 export default {
   name: 'AttendancesPageTool',

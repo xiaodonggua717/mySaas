@@ -143,6 +143,7 @@ export default {
     resetForm() {
       this.ruleForm = {}
     },
+
     handleChange(obj) {
       this.state = obj
     },

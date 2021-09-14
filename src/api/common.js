@@ -18,6 +18,7 @@ export function getCityJSON() {
     url: '../../static/json/map.json'
   })
 }
+
 export function getCityList() {
   return request({
     url: '/sys/city'

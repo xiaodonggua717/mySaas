@@ -101,8 +101,6 @@
       <!--查看弹框-->
       <el-dialog :title="topLabel" :visible.sync="centerDialogVisible" width="50%" left>
         <component :is="currentComponent" :user-salary="selectedSalaryInfo" :user-id="selectUserId" @success="getSalarysList" @onDialogCancel="centerDialogVisible=false" />
-        <!-- <ChangeSalary v-if="seeState == 'changeSalary'" :user-salary="selectedSalaryInfo" :user-id="selectUserId" @onDialogCancel="centerDialogVisible=false" /> -->
-        <!-- <FixedSalary v-if="seeState == 'fixedSalary'" /> -->
       </el-dialog>
     </div>
   </div>

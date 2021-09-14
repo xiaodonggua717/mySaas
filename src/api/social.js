@@ -20,6 +20,7 @@ export function newReport(data) {
     data
   })
 }
+
 export function getHistorysData(data) {
   return request({
     url: `/social_securitys/historys/archiveDetail/${data.userId}/${data.yearMonth}`,

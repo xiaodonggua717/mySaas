@@ -1,14 +1,5 @@
 <template>
   <div class="cont-top-box">
-    <!-- <div class="top-lable">
-      <div class="careful-lab"> <i class="el-icon-info" />当前审批中 0 本月审批通过 1 本月审批驳回 0</div>
-      <div class="lable-tit">
-        <el-button type="primary" size="mini">
-          <router-link :to="{'path':'/approvals/securitySetting'}">流程设置</router-link>
-
-        </el-button>
-      </div>
-    </div> -->
     <el-dialog title="导出" width="500px" :visible.sync="exportData">
       <div class="exportTit"> 如果导出每月数据过多，请使用筛选功能后导出 </div>
       <div class="exportCont">

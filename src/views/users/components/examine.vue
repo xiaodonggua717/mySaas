@@ -40,7 +40,6 @@
 
 <script>
 import { getUserSalary } from '@/api/user'
-
 export default {
   name: 'UsersTableIndex',
   data() {

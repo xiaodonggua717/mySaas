@@ -13,7 +13,7 @@
         <div class="social">
           <div class="title"> <strong>津贴</strong></div>
           <div class="table">
-            <div class="tabTit"><div>津贴类型</div><div> 补贴金额 </div><div>津贴类型</div><div> 补贴金额 </div></div>
+            <div class="tabTit"><div>津贴类型</div><div> 补贴金额 </div><div>津贴类型</div><div> 补贴金额</div></div>
             <div class="tabRow"><div>交通补助</div><div> {{ paymentData.p2 }} </div><div>通讯补助</div><div> {{ paymentData.p3 }} </div></div>
             <div class="tabRow"><div>午餐补助</div><div> {{ paymentData.p4 }} </div><div>住房补助</div><div> {{ paymentData.p1 }} </div></div>
           </div>

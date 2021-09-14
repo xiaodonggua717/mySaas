@@ -30,7 +30,6 @@ export default {
   },
 
   methods: {
-    // 业务方法
     // 归档报表
     archivingReportForm() {
       this.$confirm(

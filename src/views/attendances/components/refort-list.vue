@@ -236,7 +236,6 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 @import '../../../styles/variables.scss';
 .butList {
-  // border-top: solid 1px #f4f4f4;
   margin-top: 15px;
   text-align: center;
   background: #fff;

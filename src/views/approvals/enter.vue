@@ -36,7 +36,6 @@
 
 <script>
 import { getInformation, getReviewHistory } from '@/api/approvals'
-
 export default {
   name: 'UsersTableIndex',
   components: { },

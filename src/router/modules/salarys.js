@@ -1,6 +1,5 @@
 
 import Layout from '@/layout'
-
 const salaryRouter = {
   path: '/salarys',
   component: Layout,

@@ -69,6 +69,7 @@ export default {
     },
     handleRemove(file, fileList) {
       // console.log(file, fileList)
+      // 待实现
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url

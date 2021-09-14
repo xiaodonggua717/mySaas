@@ -17,7 +17,6 @@
         </div>
       </div>
       <div class="content">
-        <!-- <p v-for="(item, index) in information.body" :key="index"><span>{{item.key}} </span> {{item.val}}</p> -->
         <p>
           <span>申请类型：</span>离职
         </p>

@@ -6,7 +6,7 @@
         <div class="fl headL">
           <div class="headImg">
             <!-- <img src="@/assets/common/head.jpeg"> -->
-            <img v-imagerror="" :src="staffPhoto">
+            <img v-imageerror="defaultImg" :src="staffPhoto">
           </div>
           <div class="headInfoTip">
             <p class="firstChild">欢迎登录,{{ username }}</p>

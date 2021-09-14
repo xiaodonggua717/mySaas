@@ -105,7 +105,7 @@ export default {
     },
     // 导出
     handleExport() {
-      // GaolyQQ待实现
+      // 待实现
     }
   }
 }

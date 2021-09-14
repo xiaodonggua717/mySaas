@@ -353,7 +353,7 @@
               </div>
             </el-form-item>
             <el-form-item label="打卡验证：" prop="isClock">
-              <el-switch v-model="overtimeBase.isClock" />&nbsp;&nbsp;加班需要有打卡记录
+              <el-switch v-model="overtimeBase.isClock" />&nbsp;&nbsp;加班需要当日打卡记录
             </el-form-item>
             <el-form-item label="开启补偿：" prop="isCompensationint">
               <el-switch v-model="overtimeBase.isCompensationint" />

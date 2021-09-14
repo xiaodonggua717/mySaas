@@ -31,6 +31,7 @@ export function delPermission(id) {
     method: 'delete'
   })
 }
+
 // 获取权限详情
 export function getPermissionDetail(id) {
   return request({

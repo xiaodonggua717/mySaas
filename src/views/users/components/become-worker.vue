@@ -34,7 +34,6 @@
 
 <script>
 import { regularWorker } from '@/api/user'
-
 export default {
   name: 'UsersTableIndex',
   data() {

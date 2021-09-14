@@ -43,7 +43,6 @@
         <el-form-item label="简历预览：" prop="types">
           点击查看
         </el-form-item>
-
         <div class="buttones" style="text-align: center;margin-top: 40px">
           <el-form-item>
             <el-button type="primary">通过</el-button>

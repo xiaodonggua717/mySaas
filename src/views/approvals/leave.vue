@@ -54,7 +54,6 @@
         <li v-for="(item, index) in taskInstanceOutList" :key="index">
           <div class="name" :style="index==taskInstanceOutList.length-1?'border-right:none':''">
             <p>{{ item.handleTime | formatDate }}</p>
-            <!-- <p>{{item.description}}</p> -->
           </div>
           <div class="act">
             <strong>{{ item.handleUserName }}</strong>

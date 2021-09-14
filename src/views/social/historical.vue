@@ -168,7 +168,6 @@ export default {
         this.$set(this.tableData[index], 'act', false)
       }
     },
-
     changeYear() {
       this.getArchivingList()
     }
