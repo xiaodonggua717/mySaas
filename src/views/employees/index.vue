@@ -13,6 +13,7 @@
           <el-button type="danger" @click="exportData">excel导出</el-button>
           <el-button
             type="primary"
+            :disabled="!checkPermission('POINT-USER-ADD')"
             @click="showDialog = true"
           >新增员工</el-button>
         </template>

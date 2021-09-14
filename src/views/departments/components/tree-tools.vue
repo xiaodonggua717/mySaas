@@ -28,7 +28,7 @@
             <!-- 显示内容结束 -->
             <!-- 可选内容 -->
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="add">
+              <el-dropdown-item command="add" :disabled="checkPermission('add-dept')">
                 添加子部门
               </el-dropdown-item>
               <el-dropdown-item v-if="!isRoot" command="modify">

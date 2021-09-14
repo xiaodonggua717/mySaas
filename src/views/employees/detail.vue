@@ -71,10 +71,14 @@ export default {
       this.userInfo = await getUserDetailById(this.userId)
     },
     async saveUser() {
+      console.log(123)
       try {
         // 校验
+        console.log('点击成功')
         await this.$refs.userForm.validate()
+        console.log('验证成功')
         await saveUserDetailById({ ...this.userInfo, password: this.userInfo.password2 }) // 将新密码的值替换原密码的值
+        console.log('更换密码成功')
         this.$message.success('保存成功')
       } catch (error) {
         console.log(error)
